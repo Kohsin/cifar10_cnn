@@ -42,6 +42,7 @@ x = Conv2D(filters=64, kernel_size=(3, 3), padding='same', activation='relu')(x)
 x = MaxPooling2D(pool_size=(2, 2))(x)
 x = Dropout(rate=0.25)(x)
 x = Flatten()(x)
+x = Dense(units=2048, activation='relu')(x)
 x = Dense(units=512, activation='relu')(x)
 x = Dense(units=num_classes, activation='softmax')(x)
 model = Model(input, x)  # 创建模型
