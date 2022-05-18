@@ -12,7 +12,7 @@ from matplotlib import pyplot as plt
 
 epochs = 50  # 迭代次数
 batch_size = 32  # 批大小
-opt = RMSprop(lr=0.0001, decay=1e-6)  # 使用RMSprop优化器
+opt = RMSprop(lr=0.00003, decay=1e-6)  # 使用RMSprop优化器
 num_classes = 100  # 有多少个类别
 input_shape = (32, 32, 3)  # 图片的shape
 output_dir = './output'  # 输出目录
