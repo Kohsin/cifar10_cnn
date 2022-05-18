@@ -4,7 +4,7 @@ import shutil
 from keras import Input, Model
 from keras.datasets import cifar10
 from keras.layers import Conv2D, MaxPooling2D, Dropout, Flatten, Dense
-from keras.optimizers import RMSprop
+from tensorflow.keras.optimizers import RMSprop
 from keras.utils import to_categorical, plot_model
 from matplotlib import pyplot as plt
 
