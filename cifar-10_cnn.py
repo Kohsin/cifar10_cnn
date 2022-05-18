@@ -2,7 +2,7 @@ import os
 import shutil
 
 from keras import Input, Model
-from keras.datasets import cifar10
+from keras.datasets import cifar100
 from keras.layers import Conv2D, MaxPooling2D, Dropout, Flatten, Dense
 from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.utils import to_categorical, plot_model
@@ -13,7 +13,7 @@ from matplotlib import pyplot as plt
 epochs = 5  # 迭代次数
 batch_size = 32  # 批大小
 opt = RMSprop(lr=0.0001, decay=1e-6)  # 使用RMSprop优化器
-num_classes = 10  # 有多少个类别
+num_classes = 100  # 有多少个类别
 input_shape = (32, 32, 3)  # 图片的shape
 output_dir = './output'  # 输出目录
 if os.path.exists(output_dir):
@@ -23,7 +23,7 @@ os.mkdir(output_dir)
 print('%s已创建' % output_dir)
 
 # 准备数据
-(x_train, y_train), (x_val, y_val) = cifar10.load_data()
+(x_train, y_train), (x_val, y_val) = cifar100.load_data()
 x_train = x_train.astype('float32') / 255  # 归一化
 x_val = x_val.astype('float32') / 255
 
